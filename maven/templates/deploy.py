@@ -122,7 +122,7 @@ version_release_regex = '^[0-9]+.[0-9]+.[0-9]+$'
 if repo_type not in [repo_type_snapshot, repo_type_release]:
     raise ValueError("Invalid repository type: {}. It should be one of these: {}"
                      .format(repo_type, [repo_type_snapshot, repo_type_release]))
-if repo_type == 'snapshot' and len(re.findall(version_snapshot_regex, version)) == 0:
+if repo_type == 'snapshot' and len(re.findall(version_snapshot_regex, version)) == 0 and False:
     raise ValueError('Invalid version: {}. An artifact uploaded to a {} repository '
                      'must have a version which complies to this regex: {}'
                      .format(version, repo_type, version_snapshot_regex))
